@@ -1,5 +1,6 @@
 @import 'config';
 @import 'menu';
+@import 'mobile';
 
 * {
     box-sizing: border-box;
@@ -54,13 +55,14 @@ main {
 
     .icons {
         margin-top: 1rem;
-
+        //space between icons 
         a {
             padding: 0.4rem;
 
         &:hover {
             color: $secondary-color;
             @include easeOut();
+            
             }
         }
     }

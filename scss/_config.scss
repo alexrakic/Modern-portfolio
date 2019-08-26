@@ -1,8 +1,8 @@
 $primary-color:rgb(212, 176, 241);
 $secondary-color: #cc2cb7;
 $show-home-image: true;
-$home-image: url(../dist/img/acrylic-art-artistic-1083617.jpg);
-$background-opacity: 0.9;
+$home-image: url('../../dist/img/art-backdrop-background-1985172.jpg');
+$background-opacity: 0.5;
 
 
 html {
@@ -32,5 +32,30 @@ html {
                 background: rgba($primary-color, $background-opacity);
             }
         }
+    }
+}
+
+//Media Query Mixins 
+@mixin mediaSm {
+    @media screen and (max-width: 500px){
+      @content;          
+    }
+}
+
+@mixin mediaMd {
+    @media screen and (max-width: 768px){
+      @content;          
+    }
+}
+
+@mixin mediaLg {
+    @media screen and (min-width: 769px) and (max-width: 1170px){
+      @content;          
+    }
+}
+
+@mixin mediaXl {
+    @media screen and (min-width: 1171px){
+      @content;          
     }
 }
