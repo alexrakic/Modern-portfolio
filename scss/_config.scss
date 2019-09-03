@@ -1,3 +1,4 @@
+
 $primary-color:rgb(212, 176, 241);
 $secondary-color: #cc2cb7;
 $show-home-image: true;
@@ -35,27 +36,37 @@ html {
     }
 }
 
-//Media Query Mixins 
+
+
+
+//Media Query Mixins
+
+@mixin mediaXs {
+    @media only screen and (max-width: 320px){
+        @content;
+    }
+}
+
 @mixin mediaSm {
-    @media screen and (max-width: 500px){
-      @content;          
+    @media only screen and (max-width: 500px){
+        @content;
     }
 }
 
 @mixin mediaMd {
-    @media screen and (max-width: 768px){
-      @content;          
+    @media only screen and (max-width: 768px){
+      @content;         
     }
 }
 
 @mixin mediaLg {
-    @media screen and (min-width: 769px) and (max-width: 1170px){
-      @content;          
+    @media only screen and (min-width: 769px) and (max-width: 1170px){
+      @content;        
     }
 }
 
 @mixin mediaXl {
     @media screen and (min-width: 1171px){
       @content;          
-    }
-}
+   }
+ }

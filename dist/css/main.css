@@ -45,22 +45,10 @@ html {
     background: #c89aed;
     list-style: none;
     transform: translate3d(0, -100%, 0);
+    font-size: 30px;
     transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
-  .menu-branding {
-    background: #d4b0f1;
-    transform: translate3d(0, 100%, 0);
-    transition: all 0.5s ease-out; }
-    .menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-    .menu-branding .portrait {
-      width: 250px;
-      height: 250px;
-      background-image: url("../../dist/img/Portret2.jpg");
-      background-repeat: no-repeat;
-      border-radius: 50%;
-      border: solid 3px #cc2cb7; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
@@ -74,7 +62,7 @@ html {
     font-size: 30px;
     text-transform: lowercase;
     padding: 1rem 0;
-    font-weight: 400;
+    font-weight: 300;
     color: #7316ee;
     text-decoration: none;
     transition: all 0.5s ease-out; }
@@ -92,38 +80,6 @@ html {
 
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
-
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  ul.menu-nav,
-  div.menu-breanding {
-    float: none;
-    width: 100%;
-    min-height: 0px; }
-    ul.menu-nav.show,
-    div.menu-breanding.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px; }
-  .menu-breanding {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-breanding .portrait {
-      background: url("../../dist/img/Portret2.jpg");
-      width: 150px;
-      height: 150px; } }
-
-@media screen and (max-width: 500px) {
-  padding: 2rem;
-  #home h1 {
-    margin-top: 10vh; } }
 
 * {
   box-sizing: border-box; }
@@ -173,7 +129,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh - 600px); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -185,3 +141,71 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-columns: repeat(3, 1fr); }
+  .about-info .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+    border-radius: 50%;
+    border: #cc2cb7 3px solid;
+    width: 250px;
+    height: 250px;
+    float: left; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  .about-info .job-1 {
+    grid-area: job1; }
+  .about-info .job-2 {
+    grid-area: job2; }
+  .about-info .job-3 {
+    grid-area: job3; }
+  .about-info .job {
+    background: #e0c6f5;
+    padding: 0.5rem;
+    border-bottom: #cc2cb7 5px solid; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #bc85e9;
+  color: set-text-color(#d4b0f1);
+  height: 60px; }
+
+@media only screen and (max-width: 500px) {
+  padding: 2rem;
+  #home h1 {
+    margin-top: 10vh; } }
+
+@media only screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav,
+  div.menu-breanding {
+    float: none;
+    min-height: 0px;
+    padding-top: 5px;
+    line-height: 0.75; }
+    ul.menu-nav.show,
+    div.menu-breanding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    transform: translate3d(0, -100%, 0);
+    font-size: 24px;
+    float: none; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-breanding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
+    grid-template-columns: 1fr; } }

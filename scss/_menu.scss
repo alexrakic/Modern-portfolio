@@ -53,6 +53,7 @@
         visibility: visible;
     }
 
+    //List items on the left side
     &-branding, &-nav{
         display: flex;
         flex-flow: column wrap;
@@ -64,12 +65,14 @@
         overflow: hidden;
     }
 
+    //Text from the right side 
     &-nav {
         margin: 0;
         padding: 0;
         background: darken($primary-color, 5);
         list-style: none;
         transform: translate3d(0, -100%, 0);
+        font-size: 30px;
         @include easeOut;
 
         &.show {
@@ -79,26 +82,13 @@
     }
 
     //Branding Side 
-    &-branding {
-        background: $primary-color;
-        transform: translate3d(0, 100%, 0);
-        @include easeOut;
+    // &-branding {
+    //     background: $primary-color;
+    //     transform: translate3d(0, 100%, 0);
+    //     @include easeOut;
+ 
 
-        &.show {
-            //Slide in from bottom
-            transform: translate3d(0, 0, 0);
-        } 
-        //My porttrait picktures
-        .portrait {
-            width: 250px;
-            height: 250px;
-            background-image: url('../../dist/img/Portret2.jpg');
-            background-repeat: no-repeat;
-            border-radius: 50%;
-            border: solid 3px $secondary-color;
-
-        }
-    }
+    
 
     .nav-item {
         transform: translate3d(600px, 0, 0);
@@ -121,7 +111,7 @@
         font-size: 30px;
         text-transform: lowercase;
         padding: 1rem 0;
-        font-weight: 400;
+        font-weight: 300;
         color: rgb(115, 22, 238);
         text-decoration: none;
         @include easeOut;
