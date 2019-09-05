@@ -7,16 +7,27 @@
     #home h1 {
       margin-top: 10vh;
     }
+    .lg-heading {
+        margin-top:1rem;
+        font-size: 5rem;
+      }
+      .projects {
+        grid-template-columns: 1fr;
+    }
 }
 
 //Widescreens
 @include mediaXl {
-    
+    .projects {
+    grid-template-columns: repeat(4, 1fr);//That means that the images are 4 in a row
+    }
 }
 
 //Desctops & Laptops
 @include mediaLg { 
-      
+    .projects {
+        grid-template-columns: repeat(2, 1fr);//That means that the images are 2 in a row
+        }  
 }
 
 //Tablets & Small Laptops
@@ -61,7 +72,7 @@
         transform: translate3d(100%, 0, 0);
        
     }
-
+    //The text, picture and biography are below each other
     .about-info {
         grid-template-areas: 
         'bioimage'
@@ -71,6 +82,10 @@
         'job3';
 
         grid-template-columns: 1fr;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
